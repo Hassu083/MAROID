@@ -46,9 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return list;
   }
 
-  execute() {
+  execute(BuildContext context) {
     output = [];
     int i = 0;
+    print(code);
+    print(MyInheritedWidget.of(context));
+    // print(codeRegister);
     while (i < code.length) {
       List<String> outputStatement = [];
       if (code[i] == 'add') {
@@ -56,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
         String rs1 = codeRegister[i].text.split(',')[1].trim();
         String rs2 = codeRegister[i].text.split(',')[2].trim();
         outputStatement.add('$rd = $rs1 + $rs2');
+        print("hello");
         outputStatement.add(
             '$rd = ${MyInheritedWidget.of(context)!.registers[rs1]} + ${MyInheritedWidget.of(context)!.registers[rs2]}');
         MyInheritedWidget.of(context)!.registers[rd] =
@@ -376,7 +380,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    final myState = MyInheritedWidget.of(context);
+    print(myState);
+    return MyStatefulWidget(
+    child: Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -468,7 +475,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           }
                         },
                         icon: Icons.arrow_downward),
-                    MyAction(ontap: execute, icon: Icons.play_arrow),
+                    Builder(
+                      builder: (BuildContext context){
+                        return MyAction(ontap: (){
+                      execute(context);
+                    }
+                    , icon: Icons.play_arrow);
+                      },
+                    ),
                     MyAction(ontap: save, icon: Icons.save)
                   ],
                 ),
@@ -739,6 +753,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: markLabel,
             )
           : null,
+          )
     );
   }
 
