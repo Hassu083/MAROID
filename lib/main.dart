@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyStatefulWidget(
-      child: MaterialApp(
+      child: Builder(
+          builder: (BuildContext innerContext) {
+            return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'M. A. Roid',
         onGenerateRoute: (setting){
@@ -35,7 +37,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.orange,
         ),
-      ),
+      );
+      }
+      )
     );
   }
 }
