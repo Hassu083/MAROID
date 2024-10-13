@@ -73,7 +73,7 @@ class MainMenu extends StatelessWidget {
             ),
             Positioned(
               top: -50,
-              child: Container(child: Image.asset('mips.png',),
+              child: Container(child: Image.asset('assets/mips.png',),
               width: 180,
               padding: const EdgeInsets.all(5),
               decoration: const BoxDecoration(

@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Image.asset('splash.gif'),
+        child: Image.asset('assets/third.gif'),
       ),
     );
   }

@@ -25,7 +25,7 @@ class Introductioncreen extends StatelessWidget {
             body: 'Run and compile your MIPS assembly code on M.A.Roid with interactive and easy to use interface.',
             image: Container(
               margin: const EdgeInsets.only(top: 100),
-                child: Image.asset('first.gif')),
+                child: Image.asset('assets/first.gif')),
             decoration: pageDecoration
           ),
           PageViewModel(
@@ -33,7 +33,7 @@ class Introductioncreen extends StatelessWidget {
               body: 'Displaying output step by step comprehensively.',
               image: Container(
                   margin: const EdgeInsets.only(top: 50),
-                  child: Image.asset('second.gif')),
+                  child: Image.asset('assets/second.gif')),
               decoration: pageDecoration
           ),
           PageViewModel(
@@ -41,7 +41,7 @@ class Introductioncreen extends StatelessWidget {
               body: 'M.A.Roid comes with convenient graphics and interface for its users',
               image: Container(
                   margin: const EdgeInsets.only(top: 0),
-                  child: Image.asset('third.gif')),
+                  child: Image.asset('assets/third.gif')),
               decoration: pageDecoration
           ),
         ],
